@@ -1,6 +1,6 @@
 # React seed
 
-This project can be used as a seed for a React project.
+This project can be used as a seed for a React project. Edit by Karl-Erik
 
 ## Table of Contents
 
