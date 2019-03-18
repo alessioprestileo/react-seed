@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" class="container">
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th *ngFor="let item of tableHeader">{{item}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of listData; let i = index" [ngClass]="{'hilight' : indexVal==i}" (click)="onRow(list, i);open(content)">
+        <td *ngFor="let item of tableHeader">{{list[item]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Detailed View</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngFor="let detail of Detaillist">{{detail | titlecase }} : {{letDetailData[detail]}}</div>
+  </div>
+</ng-template>
+<router-outlet></router-outlet>

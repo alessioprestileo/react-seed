@@ -1,0 +1,18 @@
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 1px solid black;
+  text-align: left;
+}
+th{
+	text-transform: capitalize;
+	text-align: center;
+}
+td{
+	cursor: pointer;
+}
+.hilight td{
+	background-color: yellow;
+}
