@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+        <img class="card-img-top card-img" *ngIf="movieDetail.Poster !== 'N/A'" src="{{movieDetail.Poster}}" alt="Image not found">
+        <img class="card-img-top" height="250" *ngIf="movieDetail.Poster === 'N/A'" src="assets/image/notfound.png">
+    </div>
+    <div class="card-body">
+        <h1 class="card-title text-danger">{{movieDetail.Title}}</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 p-0 card-p">
+                    <img class="float-left img-thumbnail" src="assets/image/starmin.png">
+                    <p class="p-1">&nbsp;{{movieDetail.imdbRating}}/10</p>
+                </div>
+                <div class="col-5 p-0 card-p">{{movieDetail.Genre}}</div>
+                <div class="col-4 p-0 card-p">{{movieDetail.Released}}</div>
+            </div>
+        </div>
+        <p class="plot-text">Director : {{movieDetail.Director}}</p>
+        <p class="card-text">Cast: {{movieDetail.Actors}}</p>
+        <p class="card-text">{{movieDetail.Plot}}</p>
+    </div>
+</div>

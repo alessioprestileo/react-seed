@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/variables';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+
+
+
+body {
+    background-color: #F8FAFB;
+    font-family: 'Open Sans', sans-serif;
+ 
+    background-image: url(assets/image/Movies.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+ .pointer {
+     cursor: pointer;
+ }
+ .card {
+    background-color: $secondary;
+    .card-body {
+        color: $white;
+    }
+ }

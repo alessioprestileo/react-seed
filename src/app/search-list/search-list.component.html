@@ -1,0 +1,36 @@
+<div class="row mt-4 m-0 justify-content-center">
+    <div class="col-md-4">
+        <input class="form-control" [formControl]="searchKey" placeholder="Enter Movie Title or ID..." type="text" id="title"
+            autocomplete="off" autofocus>
+    </div>
+    <div class="col-md-2" *ngIf="searchBy.value==='s'">
+        <input class="form-control" [formControl]="searchByYear" placeholder="Year..." type="number" id="title"
+            autocomplete="off" autofocus>
+    </div>
+    <div class="col-md-2">
+        <select id="orders" [formControl]="searchBy" placeholder="Search By" class="form-control">
+            <option *ngFor="let order of orders; let i = index" [value]="orders[i].id">
+                {{orders[i].name}}
+            </option>
+        </select>
+    </div>
+</div>
+<div class="row m-0 justify-content-center alert" *ngIf="searchResult">{{searchResult}}&nbsp;&nbsp;<p *ngIf="totalResults && searchBy.value ==='s'">Total results: {{totalResults}}</p></div>
+<div class="row m-0 justify-content-center">
+    <div class="card-columns col-md-8 search-container" infinite-scroll [infiniteScrollDistance]="modalScrollDistance"
+        [infiniteScrollThrottle]="modalScrollThrottle" [scrollWindow]="false" (scrolled)="onModalScrollDown()">
+
+        <div class="card pointer"  (click)="viewDetail(film.imdbID)" *ngFor="let film of films">
+            <img class="card-img-top" height="250" *ngIf="film.Poster !== 'N/A'" src="{{film.Poster}}" alt="Image not found">
+            <img class="card-img-top" height="250" *ngIf="film.Poster === 'N/A'" src="assets/image/notfound.png">
+            <div class="card-body">
+                <h6 class="card-title m-0">{{film.Title}}</h6>
+                <p class="card-text  m-0">{{film.Type}} · <small class="text-danger">IMDB-ID: {{film.imdbID}}</small></p>
+                <p class="card-text  m-0"><small class="text-danger">{{film.Year}}</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" *ngIf="movieDetails">
+        <app-show-movie-detail [movieDetail]=movieDetails></app-show-movie-detail>
+    </div>
+</div>
