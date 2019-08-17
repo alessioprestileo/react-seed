@@ -30,7 +30,7 @@ module.exports = {
     port: 3001,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.json'],
   },
   module: {
     rules: [
