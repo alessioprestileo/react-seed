@@ -1,0 +1,13 @@
+@import '../../styles/themeStyles';
+.breadcrumb-wrapper{
+    height: 20px;
+    width: 100%;
+    background-color: blue;
+    .breadcrumb-container{
+        text-align: justify;
+        padding-left: 13px;
+        .breadcrumb-link{
+            color:$color-lightest;
+        }
+    }
+}

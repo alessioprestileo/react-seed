@@ -95,7 +95,8 @@
     "url-loader": "^1.1.2",
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "exotic": "0.0.1"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.4.4",

@@ -1,0 +1,33 @@
+@import '../../../styles/themeStyles';
+.product-wrapper{
+    margin-top : 20px;
+    display: flex;
+    .product-image {
+        flex : 1 1 0;
+    }
+
+    .product-description{
+        flex : 1 1 0;
+        text-align: left;
+        .product-name{
+            font: $font;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .product-content{
+            margin-top: 20px;
+        }
+        .product-rating{
+           margin-top: 20px;
+        }
+        .product-language{
+            margin-top: 20px;
+        }
+        .product-running-time{
+            margin-top: 20px;
+        }
+        .product-value{
+            font-weight: bold;
+        }
+    }
+}

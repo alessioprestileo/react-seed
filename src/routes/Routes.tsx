@@ -11,7 +11,7 @@ class Routes extends React.Component {
         <section className="app-wrapper">
           <Switch>
             <Route exact path = "/" component = {ProductList}/>
-            <Route exact path = "/product:productId" component = {ProductDetail}/>
+            <Route exact path = "/product/:productId" component = {ProductDetail}/>
           </Switch>
         </section>
       </React.Fragment>

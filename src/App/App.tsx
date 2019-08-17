@@ -5,7 +5,7 @@ import './App.scss';
 import { Routes } from '../routes';
 
 const App = () => {
-  const appTitle = 'This is a seed for a React project';
+  const appTitle = 'This is Sample React project';
 
   return (
     <div className="app">
