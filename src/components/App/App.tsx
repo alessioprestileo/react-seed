@@ -1,5 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
+import { MovieGallery } from '../view/pages';
 
 import './App.scss';
 
@@ -11,7 +12,9 @@ const App = () => {
       <header className="app-header">
         <h1 className="app-title">{appTitle}</h1>
       </header>
-      <div className="page">Insert the app content here.</div>
+      <div className="page">
+        <MovieGallery />
+      </div>
     </div>
   );
 };

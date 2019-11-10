@@ -1,0 +1,19 @@
+@import '../../../../styles/themeStyles';
+
+.movie-detail {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-style: italic;
+
+    .movie-detail-item {
+        font-weight: bold;
+        color: $color-darkest;
+        margin: 3px 0px;
+
+        .movie-detail-label {
+            font-weight: normal;
+            margin-right: 10px;
+        }
+    }
+}
