@@ -1,7 +1,7 @@
 import React from 'react';
 import './Films.scss';
 import { isEmptyObject, isNonEmptyArray } from './deps';
-import { ListElement } from './type';
+import { ListElement, Rating } from './type';
 
 class Films extends React.Component<ListElement> {
     state = {
@@ -14,17 +14,17 @@ class Films extends React.Component<ListElement> {
     }
     render() {
         const addClass = this.state.isShow ? "show" : "hide";
-        const renderRatings = (props: any) => {
-            return props.map((props: any, key: any) => {
+        const renderRatings = (props: Rating[]) => {
+            return props.map((item: any, key: any) => {
                 return (
                     <div className="rating-container" key={key}>
-                        <div className="source">{props.Source}</div>
-                        <div className="value">{props.Value}</div>
+                        <div className="source">{item.Source}</div>
+                        <div className="value">{item.Value}</div>
                     </div>
                 );
             });
         };
-        const renderAccordion = (props: any) => {
+        const renderAccordion = (props: FilmDetails) => {
             return (
                 <div className="accordion" onClick={this.onClick}>
                     <div className="list-container">
