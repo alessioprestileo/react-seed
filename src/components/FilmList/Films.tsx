@@ -1,7 +1,7 @@
 import React from 'react';
 import './Films.scss';
 import { isEmptyObject, isNonEmptyArray } from './deps';
-import { ListElement, Rating } from './type';
+import { ListElement, Rating, FilmDetails } from './type';
 
 class Films extends React.Component<ListElement> {
     state = {
