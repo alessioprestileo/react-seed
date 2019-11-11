@@ -7,7 +7,7 @@ const films: any = ['How to train your dragon', 'Fast & Furious 6', 'Gladiator',
 const resultArray: any = [];
 
 class FilmList extends React.Component {
-  state: FilmLists = {};
+  state: FilmLists = { list:[] };
   _isMounted = false;
 
   componentDidMount() {
