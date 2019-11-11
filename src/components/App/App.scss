@@ -47,7 +47,7 @@ body {
       cursor: pointer;
 
       &.active {
-        height: auto;
+        @include wxh(null, auto);
         .thumbContainer {
           @include wxh(35% !important, auto !important);
           padding: 1%;

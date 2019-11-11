@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 
-interface listData {
+interface ListProps {
     filmTitle: string
 }
-interface listState {
+interface ListState {
     filmData: any,
     visibleOverview: string,
     visibleDetailview: string,
-    isActive: string,
-    filmTitle: string
+    isActive: string
 }
 const listCaption : any = ["Title","Released","Runtime","Genre","Director","imdbRating"];
 
-class ListWrapper extends Component<listData, listState> {
+class ListWrapper extends Component<ListProps, ListState> {
     _isMounted = false;
     constructor(props: any) {
         super(props);
-        this.filmTitle = this.props.filmTitle || '';
         this.state = {filmData : {}, visibleOverview: "show", visibleDetailview: "hide", isActive: "none"};
     }
-
+    
     getData = (filmTitle: string) => {
         const makeRequestUrl = "http://www.omdbapi.com/?apikey=a96e4d00&t=" + filmTitle;
         const response = fetch(makeRequestUrl).then((response) => { return response.json(); });
@@ -32,70 +30,62 @@ class ListWrapper extends Component<listData, listState> {
         });
     }
     componentDidMount() {
+        const {filmTitle} = this.props;
         this._isMounted = true;
-        this.getData(this.filmTitle);
+        this.getData(filmTitle);
     }
 
     componentWillUnmount() {
         this._isMounted = false;
     }
     renderListDom = (filmData: any) => {
-        let listEle : any= [];
+        const {filmTitle} = this.props;
         let movieOverview : any = [];
-        let movieDetailedview : any = [];
-        let listEleLen : number = 0;
-        let processedNodes : number = 0;
-        let visibleOverview = this.state.visibleOverview;
-        let visibleDetailview = this.state.visibleDetailview;
-        let ele = filmData;
+        const movieDetailedview : any = [];
+        const {visibleOverview, visibleDetailview, isActive} = this.state;
 
         movieOverview = listCaption.map((data: any,idx:number) => {
-            if(typeof(ele[data]) == 'string') {
-                return(<span key={idx}><strong>{data}: </strong>{ele[data]}</span>);
+            if(typeof(filmData[data]) == 'string') {
+                const uniqueKey = filmData["Title"]? filmData["Title"].replace(/ /g,"-") + idx : idx;
+                return(<span key={uniqueKey}><strong>{data}: </strong>{filmData[data]}</span>);
             } 
         })
         
-        for (let keys in ele) {
-            if(typeof(ele[keys]) == 'object') {
-                let obj = ele[keys];
-                let objDom : any = [];
-                obj.forEach((objEle: any) => {
-                    for (let key in objEle) {
-                        objDom.push(<span><strong>{key}: </strong>{objEle[key]}</span>);
+        for (const details in filmData) {
+            let uniqueKey = filmData["Title"]? filmData["Title"].replace(/ /g,"-") + details : details;
+            if(typeof(filmData[details]) == 'object') {
+                const obj = filmData[details];
+                const objDom : any = [];
+                obj.forEach((objEle: any, idx:number) => {
+                    for (const element in objEle) {
+                        uniqueKey = uniqueKey + idx + element;
+                        objDom.push(<span key={uniqueKey}><strong>{element}: </strong>{objEle[element]}</span>);
                     }
                 });
-                movieDetailedview.push(<div className="subList"><strong>{keys}: </strong>{objDom}</div>) 
-            } else if(keys != "Poster") {
-                movieDetailedview.push(<span><strong>{keys}: </strong>{ele[keys]}</span>);
+                movieDetailedview.push(<div key={uniqueKey} className="subList"><strong>{details}: </strong>{objDom}</div>) 
+            } else if(details != "Poster") {
+                movieDetailedview.push(<span key={uniqueKey}><strong>{details}: </strong>{filmData[details]}</span>);
             }
         }
-        processedNodes = movieOverview.length;
-        if(processedNodes > listEleLen) {
-            listEle.push(
-                <React.Fragment>
-                    <div className="thumbContainer"><img src={ele['Poster']}/></div>
-                    <div className={"movieOverview " + visibleOverview}>
-                        <div className="movieDetails">
-                            {movieOverview}
-                        </div>
-                    </div>
-                    <div className={"movieDetailedView " + visibleDetailview}>
-                        <div className="movieDetails">
-                            {movieDetailedview}
-                        </div>
-                    </div>
-                </React.Fragment>
-            );
-            listEleLen = processedNodes;
-        }
+
         return(
-            <div className={"movieList " + this.state.isActive} onClick={this.showDetail}>
-                {listEle}
+            <div className={"movieList " + isActive} key={filmTitle} onClick={this.showDetail}>
+                <div className="thumbContainer"><img src={filmData['Poster']}/></div>
+                <div className={"movieOverview " + visibleOverview}>
+                    <div className="movieDetails">
+                        {movieOverview}
+                    </div>
+                </div>
+                <div className={"movieDetailedView " + visibleDetailview}>
+                    <div className="movieDetails">
+                        {movieDetailedview}
+                    </div>
+                </div>
             </div>
         );
     }
     showDetail = (e:any): void => {
-        let tar = e.currentTarget;
+        const tar = e.currentTarget;
         let visibleOverview = "";
         let visibleDetailview = "";
         let isActive = "";

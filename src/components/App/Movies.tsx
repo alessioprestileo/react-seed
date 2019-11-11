@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ListWrapper from './ListWrapper'
 
 interface AppProps {
-    filmTitle: string
+    //If any custom props
 }
  
 interface AppState {
@@ -29,7 +29,6 @@ class Movies extends Component<AppProps, AppState> {
                             return (data.Title);
                         }
                     });
-                    // console.log(nameArr);
                     this.setState({
                         filmList: nameArr,
                         listTitle: "Search Results for " + searchKey
