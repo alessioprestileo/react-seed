@@ -12,7 +12,7 @@ class FilmList extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
-    this._isMounted && films.forEach((props: any) => {
+    films.forEach((props: any) => {
       this.fetchAPI(props);
     });
   }
@@ -25,10 +25,12 @@ class FilmList extends React.Component {
     };
     const response = fetch(requestParams.url).then((response) => { return response.json(); });
     response.then((response: any) => {
-      resultArray.push(response);
-      this.setState({
-        list: resultArray,
-      });
+      if(this._isMounted) {
+        resultArray.push(response);
+        this.setState({
+          list: resultArray,
+        });
+      }
     });
   }
   render() {
