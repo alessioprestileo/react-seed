@@ -1,3 +1,4 @@
+import { FilmDetails } from './type.ts';
 const data: FilmDetails = {
   Title: 'Fast & Furious 6',
   Year: '2013',
