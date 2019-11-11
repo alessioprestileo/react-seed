@@ -1,4 +1,4 @@
-const data: any = {
+const data: FilmDetails = {
   Title: 'Fast & Furious 6',
   Year: '2013',
   Rated: 'PG-13',
