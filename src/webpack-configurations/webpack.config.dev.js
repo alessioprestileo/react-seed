@@ -27,7 +27,7 @@ module.exports = {
     compress: true,
     historyApiFallback: true,
     hot: true,
-    port: 3001,
+    port: process.env.PORT || 3001,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
