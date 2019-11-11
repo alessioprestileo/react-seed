@@ -10,7 +10,7 @@ class MoviesList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { moviesList: [], searchTerm: 'india' };
+    this.state = { moviesList: [], searchTerm: 'star'};
   }
 
   componentDidMount() {

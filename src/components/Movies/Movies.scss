@@ -154,3 +154,22 @@
         }
     }
 }
+
+@media screen and (max-width: 640px) {
+    .listItem.selected {
+        display: inline-block;
+
+        .leftWrap {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        .rightWrap {
+            width: 100%;
+        }
+    }
+}
