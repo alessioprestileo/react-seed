@@ -100,9 +100,9 @@ class MovieCard extends Component {
           </div>
           <p className="movGenre">
             <small className="gap">Genre</small>
-            { Genre.split(',')
+            {Genre.split(',')
               .map((genre) => {
-                return (<span className="label">{genre}</span>);
+                return (<span className="label" key={genre}>{genre}</span>);
               })
             }
           </p>
