@@ -3,16 +3,16 @@ import Film from './Film';
 import { isNonEmptyArray } from './deps';
 import { FilmLists } from './type';
 
-const films: any = ['How to train your dragon', 'Fast & Furious 6', 'Gladiator', 'Captain Marvel', 'Iron Man 3'];
+const film: any = ['How to train your dragon', 'Fast & Furious 6', 'Gladiator', 'Captain Marvel', 'Iron Man 3'];
 const resultArray: any = [];
 
 class FilmList extends React.Component {
-  state: FilmLists = { list:[] };
+  state: FilmLists = { list: [] };
   _isMounted = false;
 
   componentDidMount() {
     this._isMounted = true;
-    films.forEach((props: any) => {
+    film.forEach((props: any) => {
       this.fetchAPI(props);
     });
   }
@@ -21,11 +21,11 @@ class FilmList extends React.Component {
   }
   fetchAPI = (filmTitle: string): void => {
     const requestParams = {
-      url: "http://www.omdbapi.com/?apikey=ff0b7c4&t=" + filmTitle,
+      url: 'http://www.omdbapi.com/?apikey=ff0b7c4&t=' + filmTitle,
     };
     const response = fetch(requestParams.url).then((response) => { return response.json(); });
     response.then((response: any) => {
-      if(this._isMounted) {
+      if (this._isMounted) {
         resultArray.push(response);
         this.setState({
           list: resultArray,
@@ -37,7 +37,7 @@ class FilmList extends React.Component {
     return (
       <>
         {isNonEmptyArray(this.state.list) && this.state.list.map((props: any, key: any) => {
-          return <Films film={props} key={key} />;
+          return <Film film={props} key={key} />;
         })}
       </>
     );

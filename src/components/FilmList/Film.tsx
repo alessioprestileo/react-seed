@@ -3,36 +3,36 @@ import './Film.scss';
 import { isEmptyObject, isNonEmptyArray } from './deps';
 import { ListElement, Rating, FilmDetails } from './type';
 
-class Films extends React.Component<ListElement> {
-    state = {
-        isShow: false,
-    };
-    onClick = (): void => {
-        this.setState({
-            isShow: !this.state.isShow,
-        });
-    }
-    render() {
-        const addClass = this.state.isShow ? "show" : "hide";
-        const renderRatings = (props: Rating[]) => {
-            return props.map((item: any, key: any) => {
-                return (
+class Film extends React.Component<ListElement> {
+  state = {
+    isShow: false,
+  };
+  onClick = (): void => {
+    this.setState({
+      isShow: !this.state.isShow,
+    });
+  }
+  render() {
+    const addClass = this.state.isShow ? 'show' : 'hide';
+    const renderRatings = (props: Rating[]) => {
+      return props.map((item: any, key: any) => {
+        return (
                     <div className="rating-container" key={key}>
                         <div className="source">{item.Source}</div>
                         <div className="value">{item.Value}</div>
                     </div>
-                );
-            });
-        };
-        const renderAccordion = (props: FilmDetails) => {
-            return (
+          );
+      });
+    };
+    const renderAccordion = (props: FilmDetails) => {
+      return (
                 <div className="accordion" onClick={this.onClick}>
                     <div className="list-container">
                         <img className="poster" src={props.Poster} alt="NA" />
                         <div className="title">{props.Title}</div>
                         <div className="rating">{props.imdbRating}*</div>
                     </div>
-                    <div className={"detail-container " + addClass}>
+                    <div className={'detail-container ' + addClass}>
                         <img className="poster" src={props.Poster} alt="NA" />
                         <div className="tile-container">
                             <div className="title">{props.Title} ({props.Year})</div>
@@ -55,14 +55,14 @@ class Films extends React.Component<ListElement> {
                         </div>
                     </div>
                 </div>
-            );
-        };
-        return (
+      );
+    };
+    return (
             <>
                 {!isEmptyObject(this.props.film) ? renderAccordion(this.props.film) : ''}
             </>
-        );
-    }
+    );
+  }
 }
 
-export default Films;
+export default Film;
