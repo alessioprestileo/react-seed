@@ -1,5 +1,5 @@
 import React from 'react';
-import Films from './Films';
+import Film from './Film';
 import { isNonEmptyArray } from './deps';
 import { FilmLists } from './type';
 
