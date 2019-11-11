@@ -1,5 +1,5 @@
 import React from 'react';
-import './Films.scss';
+import './Film.scss';
 import { isEmptyObject, isNonEmptyArray } from './deps';
 import { ListElement, Rating, FilmDetails } from './type';
 
