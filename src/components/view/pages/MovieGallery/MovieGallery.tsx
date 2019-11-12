@@ -67,17 +67,25 @@ class MovieGallery extends React.Component {
 
     render() {
         const { searchKey = "", searchResultsList = [], hasError = false, notFound = false } = this.state
+        const renderResultSection = <>
+            {!notFound ?
+                <MovieResults searchResultsList={searchResultsList} /> :
+                ((searchKey) ? <div className="no-results">Sorry! No Results found for {"`" + searchKey + "`"}</div> :
+                    <div className="no-results">Search string cannot be empty. Please enter and try again!</div>)
+            }
+        </>
+
         return <div id="movie-gallery">
-            {!hasError ?
-                <><form id="search-container" name="searchMovie" onSubmit={this.searchMovie}>
-                    <SearchBox placeholder="Search movies..." className="search-box" value={searchKey} onChange={this.handleSearchKeyChange} />
-                </form>
-                    {!notFound ?
-                        <MovieResults searchResultsList={searchResultsList} /> :
-                        ((searchKey) ? <div className="no-results">Sorry! No Results found for {"`" + searchKey + "`"}</div> :
-                            <div className="no-results">Search string cannot be empty. Please enter and try again!</div>)
-                    }
-                </> : <div className="exception">Oops! Technical difficulties. Please reload and try again.</div>}
+            {
+                !hasError ?
+                    <>
+                        <form id="search-container" name="searchMovie" onSubmit={this.searchMovie}>
+                            <SearchBox placeholder="Search movies..." className="search-box" value={searchKey} onChange={this.handleSearchKeyChange} />
+                        </form>
+                        {renderResultSection}
+                    </> :
+                    <div className="exception">Oops! Technical difficulties. Please reload and try again.</div>
+            }
         </div>
     }
 }
