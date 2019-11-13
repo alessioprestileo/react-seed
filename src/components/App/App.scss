@@ -15,4 +15,46 @@ body {
     max-width: 1200px;
     text-align: center;
   }
+  .movieListWrapper {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem;
+    background: #eee;
+    padding: 1rem;
+    border: 1px solid #ccc;
+
+    .poster {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  
+  .detailContentWrapper {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    padding: 0.5rem;
+    background: hsla(183, 18%, 88%, 0.33);
+    margin: 0.5rem;
+
+    .detailcontentLabel {
+      display: flex;
+      flex-basis: 50%;
+      font-weight: bold;
+      justify-content: left;
+    }
+    
+    .detailcontent {
+      display: flex;
+      flex-basis: 50%;
+    }
+
+    .detailbanner {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
