@@ -1,14 +1,17 @@
 @import '../../styles/themeStyles';
 
 body {
-  background-color: $color-primary-light;
+  background-color: $color-lightest;
   font: $font;
   margin: 10px;
 
   header {
     text-align: center;
   }
-
+  .app-title{
+    font-family: $font;
+    color: $color-shadow;
+  }
   .page {
     margin-left: auto;
     margin-right: auto;
@@ -36,19 +39,22 @@ body {
     flex-basis: 100%;
     align-items: center;
     padding: 0.5rem;
-    background: hsla(183, 18%, 88%, 0.33);
+    background: $color-primary-light;
     margin: 0.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
     .detailcontentLabel {
       display: flex;
       flex-basis: 50%;
       font-weight: bold;
       justify-content: left;
+      color: $color-darkest;
     }
-    
     .detailcontent {
       display: flex;
       flex-basis: 50%;
+      text-align: left;
+      color: $color-darkest;
     }
 
     .detailbanner {
@@ -56,5 +62,9 @@ body {
       display: flex;
       justify-content: center;
     }
+  }
+  
+  .banner-img{
+    background: transparent;
   }
 }
