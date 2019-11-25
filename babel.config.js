@@ -4,11 +4,19 @@ module.exports = (api) => {
     '@babel/env',
     '@babel/typescript',
     '@babel/react',
+    // "@babel/preset-react"
   ];
   const plugins = [
+    '@babel/plugin-transform-async-to-generator',
     '@babel/plugin-syntax-dynamic-import',
-    '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
+    [
+      '@babel/plugin-proposal-decorators',
+      {
+        legacy: true,
+      },
+    ],
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
   ];
 
   switch (env) {

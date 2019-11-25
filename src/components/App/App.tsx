@@ -11,7 +11,6 @@ const App = () => {
       <header className="app-header">
         <h1 className="app-title">{appTitle}</h1>
       </header>
-      <div className="page">Insert the app content here.</div>
     </div>
   );
 };
