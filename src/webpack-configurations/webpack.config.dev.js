@@ -9,10 +9,7 @@ const pathToProjectRoot = path.resolve(__dirname, '../../');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    app: path.join(pathToProjectRoot, 'src/index.tsx'),
-    babelPolyfill: '@babel/polyfill',
-  },
+  entry: ['@babel/polyfill', path.join(pathToProjectRoot, 'src/index.tsx')],
   output: {
     filename: 'bundle.js',
     path: path.join(pathToProjectRoot, 'build_dev'),

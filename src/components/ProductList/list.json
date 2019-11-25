@@ -1,0 +1,146 @@
+{
+  "products": [
+    {
+      "identifier": "comboB001",
+      "type": "product",
+      "properties": {
+        "name": "Navy Blue & Cream Chain & Navy Blue Ear ring",
+        "image": "https://chestion-cdn.sirv.com/Category/set/combo8.jpg",
+        "categoryId": "comboset",
+        "brand": "BC's"
+      },
+      "price": {
+        "originalPrice": "500",
+        "salePrice": "450",
+        "currency": "INR"
+      },
+      "sku": [
+        {
+          "identifier": "chainB001001",
+          "properties": {
+            "size": "M"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "comboB002",
+      "type": "product",
+      "properties": {
+        "name": "Orange & Golden - Silk thread set of bangles, earring and necklace",
+        "image": "https://chestion-cdn.sirv.com/Category/set/combo1.jpg",
+        "categoryId": "comboset",
+        "brand": "BC's"
+      },
+      "price": {
+        "originalPrice": "2000",
+        "salePrice": "1499",
+        "currency": "INR"
+      },
+      "sku": [
+        {
+          "identifier": "comboB00201",
+          "properties": {
+            "size": "M"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "comboB003",
+      "type": "product",
+      "properties": {
+        "name": "Burgundy Pink & Parrot Green - Silk thread Necklace & Jumkha Stud",
+        "image": "https://chestion-cdn.sirv.com/Category/set/combo2.jpg",
+        "categoryId": "comboset",
+        "brand": "BC's"
+      },
+      "price": {
+        "originalPrice": "1300",
+        "salePrice": "999",
+        "currency": "INR"
+      },
+      "sku": [
+        {
+          "identifier": "comboB00301",
+          "properties": {
+            "size": "M"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "comboB004",
+      "type": "product",
+      "properties": {
+        "name": "Golden Silk Thread Necklace & Ear ring set",
+        "image": "https://chestion-cdn.sirv.com/Category/set/combo3.jpg",
+        "categoryId": "comboset",
+        "brand": "BC's"
+      },
+      "price": {
+        "originalPrice": "1400",
+        "salePrice": "999",
+        "currency": "INR"
+      },
+      "sku": [
+        {
+          "identifier": "comboB00401",
+          "properties": {
+            "size": "M"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "comboB005",
+      "type": "product",
+      "properties": {
+        "name": "Sky Blue & Cream chain &  Ear ring combo",
+        "image": "https://chestion-cdn.sirv.com/Category/set/combo4.jpg",
+        "categoryId": "comboset",
+        "brand": "BC's"
+      },
+      "price": {
+        "originalPrice": "1200",
+        "salePrice": "899",
+        "currency": "INR"
+      },
+      "sku": [
+        {
+          "identifier": "comboB00501",
+          "properties": {
+            "size": "M"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "comboB006",
+      "type": "product",
+      "properties": {
+        "name": "Pink & Green Full combo - Jumkha, Necklace & Bangles",
+        "image": "https://chestion-cdn.sirv.com/Category/set/combo6.jpg",
+        "categoryId": "comboset",
+        "brand": "BC's"
+      },
+      "price": {
+        "originalPrice": "2300",
+        "salePrice": "1799",
+        "currency": "INR"
+      },
+      "sku": [
+        {
+          "identifier": "comboB005601",
+          "properties": {
+            "size": "M"
+          }
+        }
+      ]
+    }
+  ],
+  "category": {
+    "identifier": "combo",
+    "parentCategory": ""
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../styles/themeStyles';
+
+
+.category-name {
+  width: 100%;
+  text-transform: capitalize;
+  padding: 0 0.5rem;
+}
+
+.list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  
+}
+
+.list-card-wrapper {
+  border: 1px solid #eee;
+  margin: 0.5rem 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.list-image-wrapper {
+  margin: auto 0;
+}
+.list-name {
+  text-align: left;
+  margin: 3px 0;
+}
+.list-image-container {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: 100%;
+}

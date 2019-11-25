@@ -1,0 +1,26 @@
+{
+  "product": {
+      "identifier": "comboB001",
+      "type": "product",
+      "properties": {
+          "name": "Navy Blue & Cream Chain & Navy Blue Ear ring",
+          "image": "https://chestion-cdn.sirv.com/Category/set/combo8.jpg",
+          "categoryId": "comboset",
+          "brand": "BC's",
+          "description": "[{\"label\": \"Material\",  \"value\": \"Plastic & Silk ThreadSet Of 14 Handmade Earings\"},{\"label\": \"Usage\", \"value\": \"Party Wear, Traditional Functions, Weddings & Ethnic Wear\"},{\"label\": \"Note\", \"value\": \"Handle with care. Keep away from liquid items\"}]"
+      },
+      "price": {
+          "originalPrice": "500",
+          "salePrice": "450",
+          "currency": "INR"
+      },
+      "sku": [
+          {
+              "identifier": "chainB001001",
+              "properties": {
+                  "size": "M"
+              }
+          }
+      ]
+  }
+}
