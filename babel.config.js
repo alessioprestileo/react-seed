@@ -9,6 +9,12 @@ module.exports = (api) => {
     '@babel/plugin-syntax-dynamic-import',
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
+    '@babel/plugin-transform-regenerator',
+    ['@babel/plugin-transform-runtime',
+      {
+        regenerator: true,
+      },
+    ],
   ];
 
   switch (env) {
