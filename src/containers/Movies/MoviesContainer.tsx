@@ -3,9 +3,9 @@ import { withStyles, Grid, CircularProgress } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 
-import { AppState } from '../../store';
-import { fetchLatestMovies, setSelectedMovie, fetchMovieById } from '../../store/movie/actions';
-import { Movie } from '../../store/movie/types';
+import { AppState } from '../../reducers';
+import { fetchLatestMovies, setSelectedMovie, fetchMovieById } from '../../actions/moviesActions';
+import { Movie } from '../../types/movieTypes';
 import MoviesContainerStyle from './MoviesContainerStyle';
 import MoviesList from '../../components/MoviesList/MoviesList';
 import MovieDetail from '../../components/MovieDetail/MovieDetail';

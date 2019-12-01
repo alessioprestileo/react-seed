@@ -4,16 +4,29 @@ class Genres {
 }
 
 export class Movie {
-  id: number = 0;
-  title: string = '';
-  overview: string = '';
-  popularity: number = 0;
-  releaseDate: string = '';
-  backdropPath: string = '';
-  posterPath: string = '';
-  adult: boolean = false;
-  genres: Genres[] = [];
+  id: number;
+  title: string;
+  overview: string;
+  popularity: number;
+  release_date: string;
+  backdrop_path: string;
+  poster_path: string;
+  adult: boolean;
+  genres: Genres[];
+  vote_average: number;
 
+  constructor() {
+    this.id = 0;
+    this.title = '';
+    this.overview = '';
+    this.popularity = 0;
+    this.release_date = '';
+    this.backdrop_path = '';
+    this.poster_path = '';
+    this.adult = false;
+    this.genres = [];
+    this.vote_average = 0;
+  }
 }
 
 export interface MoviesState {

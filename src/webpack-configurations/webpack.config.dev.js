@@ -31,6 +31,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: {
+      '@material-ui/styles': path.resolve(pathToProjectRoot, 'node_modules', '@material-ui/styles'),
+    },
   },
   module: {
     rules: [

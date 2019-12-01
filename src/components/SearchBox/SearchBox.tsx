@@ -6,25 +6,26 @@ import SearchBoxStyle from './SearchBoxStyle';
 interface SearchBoxProps {
   classes: any;
   onChange: any;
-
 }
 
 const SearchBox: FC<SearchBoxProps> = (props) => {
   const { classes, onChange } = props;
   return (
-        <Grid className={classes.search}>
-            <Grid className={classes.searchIcon}>
-                <Search />
-            </Grid>
-            <InputBase onChange={() => onChange && onChange()}
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-            />
-        </Grid>
+    <Grid className={classes.search}>
+      <Grid className={classes.searchIcon}>
+        <Search />
+      </Grid>
+      <InputBase onChange={(event) => {
+        onChange(event.target.value);
+      }}
+        placeholder="Search…"
+        classes={{
+          root: classes.inputRoot,
+          input: classes.inputInput,
+        }}
+        inputProps={{ 'aria-label': 'search' }}
+      />
+    </Grid>
   );
 };
 

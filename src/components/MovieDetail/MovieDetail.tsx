@@ -5,7 +5,7 @@ import {
 } from '@material-ui/core';
 import { Close } from '@material-ui/icons';
 import { TransitionProps } from '@material-ui/core/transitions';
-import { Movie } from '../../store/movie/types';
+import { Movie } from '../../types/movieTypes';
 import MovieDetailStyle from './MovieDetailStyle';
 import { appConstants } from '../../helpers/appConstants';
 
@@ -23,6 +23,9 @@ const Transition = forwardRef<unknown, TransitionProps>((props, ref) =>
 
 const MovieDetail: FC<MovieDetailProps> = (props) => {
   const { open, movie, classes, isLoading, onClose } = props;
+  const backdropURL = movie.backdrop_path
+        ? `${appConstants.backdropURL}${movie.backdrop_path}`
+        : require('../../react-assets/no_image_available.png');
   return (
         <Dialog open={open} disableBackdropClick={true}
             disableEscapeKeyDown={true}
@@ -31,7 +34,7 @@ const MovieDetail: FC<MovieDetailProps> = (props) => {
             onEnter={() => { }}
             onClose={() => onClose && onClose()}>
             <DialogTitle className={classes.titleContainer}>
-                <img src={`${appConstants.backdropURL}${movie.backdropPath}`}
+                <img src={backdropURL}
                     alt={`backdrop_${movie.title}`} />
                 <Grid container justify="space-between"
                     alignItems="center"
@@ -62,9 +65,9 @@ const MovieDetail: FC<MovieDetailProps> = (props) => {
                                     </Typography>
                                 </TableCell>
                             </TableRow>
-
                             {
-                                movie.genres && <TableRow>
+                                movie.genres && movie.genres.length > 0 &&
+                                <TableRow>
                                     <TableCell>
                                         <Typography variant="overline">
                                             Genres
@@ -77,6 +80,18 @@ const MovieDetail: FC<MovieDetailProps> = (props) => {
                                     </TableCell>
                                 </TableRow>
                             }
+                            <TableRow>
+                                <TableCell>
+                                    <Typography variant="overline">
+                                        Rating
+                                    </Typography>
+                                </TableCell>
+                                <TableCell>
+                                    <Typography variant="overline">
+                                        {movie.vote_average > 0 ? movie.vote_average : 0}/10
+                                    </Typography>
+                                </TableCell>
+                            </TableRow>
                         </TableBody>
                     </Table>
                     {

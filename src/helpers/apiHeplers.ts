@@ -7,9 +7,8 @@ export const getRequest = async (endpoint: string, params: any) => {
   if (params) {
     queryString = prepareQueryString(params);
   }
-  return makeRequest(`${apiBaseUrl}
-  ${endpoint}?api_key=${appConstants.apiKey}
-  &${queryString}`,  'GET');
+  queryString = `?api_key=${appConstants.apiKey}&${queryString}`;
+  return makeRequest(`${apiBaseUrl}${endpoint}${queryString}`, 'GET');
 };
 
 const makeRequest = (endpoint: string, verb: string) => {

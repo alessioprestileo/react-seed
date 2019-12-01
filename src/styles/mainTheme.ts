@@ -16,7 +16,7 @@ const appTheme = createMuiTheme({
   overrides: {
     MuiInputBase: {
       root: {
-        fontSize: '13px',
+        fontSize: 13,
       },
     },
     MuiTypography: {

@@ -1,5 +1,5 @@
-import * as apiHelper from '../../helpers/apiHeplers';
-import { appConstants } from '../../helpers/appConstants';
+import * as apiHelper from '../helpers/apiHeplers';
+import { appConstants } from '../helpers/appConstants';
 
 const defaultParams = {
   language: 'en-US',

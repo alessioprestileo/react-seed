@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Movie } from '../../store/movie/types';
+import { Movie } from '../../types/movieTypes';
 import { withStyles, GridList, GridListTile, GridListTileBar } from '@material-ui/core';
 import MoviesListStyle from './MoviesListStyle';
 import { appConstants } from '../../helpers/appConstants';
@@ -16,11 +16,14 @@ const MoviesList: FC<MoviesListProps> = (props) => {
     <GridList cellHeight={160} cols={4} className={classes.list}>
       {
         movies.map((movie) => {
+          const posterURL = movie.poster_path
+            ? `${appConstants.imageURL}${movie.poster_path}`
+            : require('../../react-assets/no_image_available.png');
           return (
             <GridListTile key={`${movie.id}`}
               className={classes.listItem}
               onClick={() => onItemClick && onItemClick(movie)}>
-              <img src={`${appConstants.imageURL}${movie.posterPath}`} alt={movie.title} />
+              <img src={posterURL} alt={movie.title} />
               <GridListTileBar title={movie.title} />
             </GridListTile>
           );

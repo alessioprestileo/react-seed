@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { MoviesState, MoviesActionTypes, Movie } from './types';
+import { MoviesState, MoviesActionTypes, Movie } from '../types/movieTypes';
 
 export const initialState: MoviesState = {
   movies: [],
@@ -12,11 +12,13 @@ export const initialState: MoviesState = {
 export const moviesReducer: Reducer<MoviesState> = (state = initialState, action) => {
   switch (action.type) {
     case MoviesActionTypes.FETCH_MOVIES_REQUEST:
+    case MoviesActionTypes.SEARCH_MOVIES_REQUEST:
       return {
         ...state,
         isFetchingMovies: true,
       };
     case MoviesActionTypes.FETCH_MOVIES_SUCCESS:
+    case MoviesActionTypes.SEARCH_MOVIES_SUCCESS:
       if (!action.payload) {
         return state;
       }
@@ -26,6 +28,7 @@ export const moviesReducer: Reducer<MoviesState> = (state = initialState, action
         movies: [...action.payload.results],
       };
     case MoviesActionTypes.FETCH_MOVIES_FAILURE:
+    case MoviesActionTypes.SEARCH_MOVIES_FAILURE:
       return {
         ...state,
         isFetchingMovies: false,

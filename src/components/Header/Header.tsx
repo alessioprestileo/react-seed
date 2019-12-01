@@ -5,20 +5,23 @@ import SearchBox from '../SearchBox/SearchBox';
 
 interface HeaderProps {
   classes: any;
-  searchKey: string;
+  searchQuery: string;
+  onSearchQueryChange: any;
 }
 
 const Header: FC<HeaderProps> = (props) => {
-  const { classes } = props;
+  const { classes, onSearchQueryChange } = props;
   return (
-        <AppBar position="static">
-            <Toolbar>
-                <Typography className={classes.title} variant="h6" noWrap>
-                    Movies List
-                    </Typography>
-                <SearchBox onChange={() => { }} />
-            </Toolbar>
-        </AppBar>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography className={classes.title} variant="h6" noWrap>
+          Movies List
+        </Typography>
+        <SearchBox onChange={(query: string) => {
+          onSearchQueryChange(query);
+        }} />
+      </Toolbar>
+    </AppBar>
   );
 };
 

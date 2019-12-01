@@ -1,8 +1,8 @@
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
-import { MoviesActionTypes, Movie } from './types';
-import { request, success, failuer } from '../baseActions';
-import * as moviesService from './services';
+import { MoviesActionTypes, Movie } from '../types/movieTypes';
+import { request, success, failuer } from './baseActions';
+import * as moviesService from '../services/services';
 
 export const setSelectedMovie = (movie: Movie) => {
   return {
