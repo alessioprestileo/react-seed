@@ -11,6 +11,15 @@ const MoviesContainerStyle = (theme: any) => ({
     bottom: 0,
     background: theme.palette.common.white,
   },
+  loader: {
+    position: 'absolute' as 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: theme.palette.common.white,
+    height: '100vh'
+  },
 });
 
 export default MoviesContainerStyle;

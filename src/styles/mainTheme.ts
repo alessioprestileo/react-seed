@@ -29,7 +29,6 @@ const appTheme = createMuiTheme({
     },
     MuiDialog: {
       paperWidthSm: {
-        minWidth: 600,
         minHeight: 500,
       },
     },

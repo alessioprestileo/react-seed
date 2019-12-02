@@ -27,8 +27,7 @@ const MovieDetail: FC<MovieDetailProps> = (props) => {
         ? `${appConstants.backdropURL}${movie.backdrop_path}`
         : require('../../react-assets/no_image_available.png');
   return (
-        <Dialog open={open} disableBackdropClick={true}
-            disableEscapeKeyDown={true}
+        <Dialog open={open}
             TransitionComponent={Transition}
             className={classes.queryFilterDialog}
             onEnter={() => { }}
@@ -83,7 +82,7 @@ const MovieDetail: FC<MovieDetailProps> = (props) => {
                             <TableRow>
                                 <TableCell>
                                     <Typography variant="overline">
-                                        Rating
+                                        User Score
                                     </Typography>
                                 </TableCell>
                                 <TableCell>
