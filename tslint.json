@@ -9,6 +9,6 @@
     "no-boolean-literal-compare": true,
     "import-name": false,
     "object-shorthand-properties-first": false,
-    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"]
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case", "allow-snake-case"]
   }
 }
