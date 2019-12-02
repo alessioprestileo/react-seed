@@ -18,7 +18,7 @@ const MoviesContainerStyle = (theme: any) => ({
     right: 0,
     bottom: 0,
     backgroundColor: theme.palette.common.white,
-    height: '100vh'
+    height: '100vh',
   },
 });
 
