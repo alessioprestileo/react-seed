@@ -1,0 +1,96 @@
+@import '../../styles/themeStyles';
+
+.search-container {
+    padding: 0 3rem;
+    .loader {
+        text-align: center;
+    }
+    .pagination {
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        margin: 3rem 0;
+        .disabled {
+            opacity: 0.5;
+        }
+        li {
+            padding: 0.3rem 0;
+            background-color: $color-secondary;
+            // border: 0.5px solid $color-lightest;
+            a {
+                color: $color-lightest;
+                text-decoration: none;
+                vertical-align: middle;
+                padding: 0.3rem 1rem;
+            }
+        }
+        .active{
+            background-color: $color-lightest;
+            a {
+                color: $color-secondary;
+            }
+        }
+    }
+    .search-block {
+        padding: 2rem;
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
+        transition: 0.3s;
+        // border-radius: 10px;
+        background-color: $color-secondary;
+        form {
+            text-align: center;
+            label {
+                margin: 0;
+                font-size: 1.4rem;
+                color: #fff;
+                input[type=text] {
+                    background-color: $color-lightest;
+                    box-shadow: none;
+                    line-height: 1.43;
+                    min-height: 1rem;
+                    padding: 0.5rem .5rem; 
+                    // border-radius: 8px;
+                    outline: none;
+                    min-width: 15rem;
+                    outline: none;
+                    margin-left: 1rem;
+                    font-size: 1.1rem;
+                    height: 1.5rem;
+                    border: none;
+                    outline: none;
+                }
+                
+            }
+            input[type=submit] {
+                line-height: 1.43;
+                min-height: 1rem;
+                padding: 0.5rem 2.5rem;
+                font-size: 1rem;
+                font-weight: bold;
+                // border-radius: 10px;
+                cursor: pointer;
+                height: 2.5rem;
+                background: $color-primary-dark;
+                color: $color-lightest;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+    .search-result {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 3rem;
+        grid-row-gap: 3rem;
+        padding-top: 2rem;
+        a {
+            text-decoration: none;
+            color: $color-primary-light;
+        }
+    }
+    .empty-error {
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 5rem;
+    }
+}
