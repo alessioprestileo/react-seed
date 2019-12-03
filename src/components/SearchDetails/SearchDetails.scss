@@ -1,0 +1,26 @@
+@import '../../styles/themeStyles';
+
+.details-wrapper {
+    .loader {
+        text-align: center;
+    }
+    .container {
+        display: flex;
+        .left-container {
+            .image {
+                padding: 2.5rem 2rem 1rem 2rem;
+                text-align: center;
+                img {
+                    max-width: 100%;
+                }
+            }
+            min-width: 40%;
+        }
+        .right-container {
+            min-width: 60%;
+            .details {
+                padding: 1rem 2rem;
+            }
+        }
+    }
+}
