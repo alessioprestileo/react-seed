@@ -6,7 +6,7 @@ module.exports = {
   testMatch: ['**/(*.test).ts?(x)'],
   coverageDirectory: 'test-coverage',
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
-  setupTestFrameworkScriptFile: './test/test-setup.ts',
+  setupFilesAfterEnv: ['./test/test-setup.ts'],
   moduleFileExtensions: [
     'ts',
     'tsx',
