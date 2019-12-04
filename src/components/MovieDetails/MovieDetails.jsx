@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './MovieDetails.scss';
 
 class MovieDetail extends Component {
@@ -74,5 +75,10 @@ class MovieDetail extends Component {
     );
   }
 }
+
+MovieDetail.propTypes = {
+  closeMovieDetails: PropTypes.func.isRequired,
+  movieSelected: PropTypes.string.isRequired,
+};
 
 export default MovieDetail;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './MoviesCard.scss';
 
 const MovieCard = ({ movie, selectMovie }) => (
@@ -8,5 +9,10 @@ const MovieCard = ({ movie, selectMovie }) => (
     </div>
   </div>
 );
+
+MovieCard.propTypes = {
+  movie: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  selectMovie: PropTypes.func.isRequired,
+};
 
 export default MovieCard;
