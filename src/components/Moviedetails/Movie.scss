@@ -1,0 +1,113 @@
+@import '../../styles/themeStyles';
+
+.movielist{
+    display:inline-block;
+    width:200px;
+    margin-bottom:30px;
+    ul{
+        list-style: none;
+        margin:0;
+        padding:0 10px;
+        li{
+            width: 180px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 5px 0;
+            &.title{
+                font-weight: bold;
+            }
+            &.year{
+                color: $color-shadow;
+                font-size: 15px;
+            }
+        }
+    }
+    img{
+        width:100%;
+        height:266px;
+    }
+    .modal-hide{
+        display:none;
+    }
+    .modal-show{
+        display: flex;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width:60%;
+        padding: 30px 35px;
+        transform: translate(-50%,-50%);
+        background: $color-lightest;
+        border:1px solid $button-color;
+        border-radius: 15px;
+        @media (max-width:767px){
+            display:block;
+            height:60%;
+            overflow-y:scroll;
+        }
+        .close-icon{
+            position: absolute;
+            top: 19px;
+            right: 10px;
+            padding: 0;
+            font-size: 18px;
+            color: #000;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            @media (max-width:767px){
+                position: absolute;
+                top: 26px;
+                right: 13px;
+            }
+        }
+        li{
+            white-space: pre-wrap;
+            overflow: unset;
+            width:auto;
+            color: $color-text;
+            font-size: 15px;
+            span{
+                font-weight: bold;
+                position: static;
+                color: $color-text-head;
+            }
+        }
+        .poster{
+            width: auto;
+            padding-right: 25px;
+        }
+        .date,.time{
+            display: inline-block;
+        }
+        .date{
+            padding-right:25px;
+        }
+        .title{
+            font-weight: 600;
+            color: $color-darkest;
+            letter-spacing: 2px;
+            font-size: 22px;
+        }
+        .plot{
+            span{
+                display: block;
+                padding-bottom: 10px;
+            }
+        }
+    }
+    button{
+        background: $button-color;
+        padding: 5px 6px;
+        margin: 0 10px;
+        color: $color-lightest;
+        border: 1px solid $button-color;
+        border-radius: 3px;
+        &:hover{
+            background: transparent;
+            color:$button-color;
+            cursor: pointer;
+        }
+    }
+}
