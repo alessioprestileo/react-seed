@@ -10,7 +10,7 @@ const pathToProjectRoot = path.resolve(__dirname, '../../');
 module.exports = {
   mode: 'development',
   entry: {
-    app: path.join(pathToProjectRoot, 'src/index.tsx'),
+    app: path.join(pathToProjectRoot, 'src/index.jsx'),
     babelPolyfill: '@babel/polyfill',
   },
   output: {
@@ -27,10 +27,10 @@ module.exports = {
     compress: true,
     historyApiFallback: true,
     hot: true,
-    port: 3001,
+    port: process.env.PORT || 3001,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   module: {
     rules: [
