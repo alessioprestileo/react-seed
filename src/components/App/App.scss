@@ -1,8 +1,13 @@
 @import '../../styles/themeStyles';
 
+@mixin wxh($width:null,  $height:null) {
+  width: $width;
+  height: $height;
+}
+
 body {
   background-color: $color-primary-light;
-  font: $font;
+  font-family: $font;
   margin: 10px;
 
   header {
@@ -14,5 +19,103 @@ body {
     margin-right: auto;
     max-width: 1200px;
     text-align: center;
+  }
+
+  .title {
+    font-family: cursive;
+    font-size: 25px;
+  }
+  .searchWrap {
+    margin-bottom: 20px;
+    .title {
+      font-size: 20px;
+    }
+    input.searchTerm {
+      margin-top: 10px;
+      padding: 10px;
+    } 
+  }
+
+  .listWrapper {
+    margin: 20px 0;
+
+    .movieList {
+      @include wxh(100%, auto);
+      border: 1px solid;
+      margin: 20px 0;
+      float: left;
+      cursor: pointer;
+
+      &.active {
+        @include wxh(null, auto);
+        .thumbContainer {
+          @include wxh(35% !important, auto !important);
+          padding: 1%;
+        }
+      }
+      .thumbContainer {
+        @include wxh(150px, 150px);
+        float: left;
+        img {
+            @include wxh(100%, 100%);
+            object-fit: contain;
+        }
+
+      }
+      .movieDetailedView {
+        &.show{
+          @include wxh(60%, null);
+        }
+      }
+      .movieOverview, .movieDetailedView {
+        float: left;
+        @include wxh(calc(100% - 150px), null);
+
+        &.hide {
+          display: none;
+        }
+        .movieDetails {
+          float: left;
+          margin-left: 20px;
+          @include wxh(90%, null);
+          text-align: left;
+          span {
+              display: flex;
+              margin: 6px 0;
+              strong {
+                  margin-right: 10px;
+              }
+          }
+          .subList span {
+            margin-left: 30px !important;
+            &:nth-child(2n+2) {
+                margin-top: 15px !important;
+            }
+          }
+        }
+      }
+
+    }
+  } 
+
+}
+
+@media screen and (max-width: 769px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  .movieList.none {
+    .thumbContainer {
+      margin: 50px 0;
+    }
+    .movieOverview.show {
+      margin: 20px 0;
+    }
+  }
+  .movieOverview {
+    @include wxh(50% !important, null);
+  }
+  .movieDetailedView {
+    @include wxh(100% !important, null);
   }
 }
