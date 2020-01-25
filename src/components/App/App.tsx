@@ -1,19 +1,17 @@
 import React from 'react';
-import { hot } from 'react-hot-loader/root';
 
 import './App.scss';
+import Filmes from '../Filmes/Filmes';
 
 const App = () => {
-  const appTitle = 'This is a seed for a React project';
-
   return (
     <div className="app">
       <header className="app-header">
-        <h1 className="app-title">{appTitle}</h1>
+        <h1 className="app-title">Filmes List</h1>
       </header>
-      <div className="page">Insert the app content here.</div>
+      <div className="page"><Filmes /></div>
     </div>
   );
 };
 
-export default hot(App);
+export default App;

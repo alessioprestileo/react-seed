@@ -1,0 +1,39 @@
+.film{
+    width:98%;
+    border-radius:5px;
+    clear:both;
+}
+.film img{
+width:60%;
+
+vertical-align:middle;
+float:left;
+}
+.film{
+    border:2px solid #ccc;
+    padding:5px;
+    position:relative;
+    min-height:350px;
+}
+
+
+.floatleft{
+    width:40%;
+    float:left;
+}
+.floaright{
+    width:60%;
+    float:left;
+}
+.details{
+    display:none;
+    width:100%;
+    margin:0 auto;
+    position:relative;
+}
+.tag
+{
+    background:#ccc;
+    padding:3px;margin:2px;
+    border-radius:3px;
+}
