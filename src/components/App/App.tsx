@@ -12,15 +12,10 @@ import ListView from './reports/ListView';
 import Detailview from './reports/Detailview';
 
 const App = () => {
-   // const appTitle = 'This is a seed for a React project';
-
   return (
     <Router>
     <div className="app">
-      {/* <header className="app-header">
-        <h1 className="app-title">{appTitle}</h1>
-      </header>
-      <div className="page">Insert the app content here.</div> */}
+      <div className="page">
       <Switch>
         <Route exact path="/">
           <ListView />
@@ -29,6 +24,7 @@ const App = () => {
           <Detailview />
         </Route>
       </Switch>
+      </div>
     </div>
     </Router>
   );
