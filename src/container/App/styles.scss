@@ -1,0 +1,29 @@
+@import '../../styles/themeStyles';
+
+body {
+  background-color: $color-primary-light;
+  font: $font;
+  margin: 0;
+  
+  header {
+    text-align: center;
+    position: sticky;
+    top: 0;
+  }
+
+  .page {
+    margin: 32px auto 0;
+    max-width: 1200px;
+    text-align: center;
+
+    @media (max-width: 1200px) {
+      margin: 0 16px;
+    }
+    @media (max-width: 1023px) {
+      margin: 0 8px;
+    }
+    @media (max-width: 767px) {
+      margin: 0 4px;
+    }
+  }
+}
