@@ -1,0 +1,28 @@
+.description-list-section {
+    margin: 0 8px;
+    .go-back-link {
+        font-size: 18px;
+        width: fit-content;
+        cursor: pointer;
+        
+        &:hover {
+           color: brown;
+        }
+    }
+    .poster-detail {
+        text-align: left;
+        margin-bottom: 0;
+        dt.info-key {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            &::after {
+                content: ':';
+            }
+        }
+        dd.info-value {
+            font-size: 16px;
+            padding-bottom: 16px;
+        }
+    }
+}
