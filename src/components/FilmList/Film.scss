@@ -1,0 +1,149 @@
+@import '../../styles/themeStyles';
+
+.accordion {
+    background-color: $color-lightest;
+    color: $color-shadow;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+
+    .list-container {
+        border: 1px solid $color-shadow;
+        padding: 5px;
+        height: 50px;
+        display: flex;
+
+        .title {
+            font-size: 20px;
+            line-height: 50px;
+            padding: 0px 10px;
+            flex: auto;
+        }
+
+        .rating {
+            font-weight: bold;
+            line-height: 50px;
+            font-size: 28px;
+        }
+    }
+
+    .detail-container {
+        padding: 0 5px;
+        display: none;
+        background-color: $color-lightest;
+        overflow: hidden;
+        border: 1px solid $color-shadow;
+        margin-top: 5px;
+        display: flex;
+
+        .poster {
+            width: 45%;
+        }
+
+        .rate-time-genre {
+            display: flex;
+        }
+
+        .tile-container {
+            padding: 15px;
+        }
+
+        .title {
+            font-size: 22px;
+            padding-bottom: 10px;
+        }
+
+        .rated,
+        .meta-score>b {
+            padding: 5px;
+            border: 1px solid $color-shadow;
+            border-radius: 4px;
+            display: inline-block;
+            color: $color-shadow;
+            margin-right: 5px;
+        }
+
+        .run-time {
+            display: inline-block;
+            padding: 0px 10px;
+            width: 75px;
+            border-right: 1px solid $color-shadow;
+            border-left: 1px solid $color-shadow;
+            align-self: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .genre {
+            display: inline-block;
+            padding-left: 10px;
+            align-self: center;
+        }
+
+        .meta-score {
+            padding: 10px 0px;
+        }
+
+        .plot,
+        .director,
+        .actors,
+        .writer,
+        .production,
+        .box-office {
+            padding-bottom: 10px;
+        }
+
+        .other-ratings .rating-container {
+            display: flex;
+            padding-bottom: 5px;
+
+            .source {
+                flex: auto;
+            }
+        }
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    .poster {
+        height: 100%;
+    }
+
+    &:hover {
+        background-color: $color-shadow;
+        color: $color-lightest;
+
+        .list-container {
+            border: 1px solid $color-lightest;
+        }
+
+        .detail-container {
+            background-color: $color-shadow;
+            border: 1px solid $color-lightest;
+
+            .rated,
+            .meta-score>b {
+                border: 1px solid $color-lightest;
+                color: $color-lightest;
+            }
+
+            .run-time {
+                border-right: 1px solid $color-lightest;
+                border-left: 1px solid $color-lightest;
+            }
+        }
+    }
+
+    .hide {
+        display: none;
+    }
+}
