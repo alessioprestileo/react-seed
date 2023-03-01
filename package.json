@@ -85,7 +85,7 @@
     "npm-update-all": "^1.0.1",
     "pa11y": "^5.1.0",
     "pa11y-reporter-html": "^1.0.0",
-    "sass-lint": "^1.12.1",
+    "sass-lint": "^1.13.0",
     "sass-loader": "^7.1.0",
     "sinon": "^7.2.2",
     "style-loader": "^0.23.1",
